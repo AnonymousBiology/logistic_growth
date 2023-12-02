@@ -15,12 +15,12 @@ growth?
 
 Since this is during the exponential phase, use the equation: 
 
-# Given values
+Given values
 N0 <- exp(6.8941709)
 r <- 0.0100086
 t <- 4980
 
-# Calculate N(t)
+Calculate N(t)
 Nt <- N0 * exp(r * t)
 
 N(t) = 4.370846e+24
