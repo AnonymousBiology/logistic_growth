@@ -12,7 +12,6 @@ data_subset1 <- growth_data %>% filter(t<1500) %>% mutate(N_log = log(N))
 
 model1 <- lm(N_log ~ t, data_subset1)
 summary(model1)
-plot(model1)
 # N0 = exp(6.8941709)
 # r = 0.0100086
 

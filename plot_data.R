@@ -15,6 +15,8 @@ ggplot(aes(t,N), data = growth_data) +
   
   theme_bw()
 
+ggsave("Population_size_time_untransformed.png", width = 8, height = 6, dpi = 600)
+
 ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
@@ -23,4 +25,8 @@ ggplot(aes(t,N), data = growth_data) +
   
   ylab("log10(N)") +
   
-  scale_y_continuous(trans='log10')
+  scale_y_continuous(trans='log10')+
+  
+  theme_bw()
+
+ggsave("Population_size_time_transformed.png", width = 8, height = 6, dpi = 600)

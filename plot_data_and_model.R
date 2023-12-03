@@ -21,12 +21,16 @@ K <- 6.00e+10 #
 ggplot(aes(t,N), data = growth_data) +
   
   geom_function(fun=logistic_fun, colour="red") +
-  # growth rate based on the estimated parameters 
+  
+  xlab("time(min)") +
+  
+  ylab("log(N)") +
   
   geom_point() + 
 
-  scale_y_continuous(trans='log10')
+  scale_y_continuous(trans='log10') + 
+  theme_bw()
 
-sink(file = "package-versions.txt")
-sessionInfo()
-sink()
+ggsave("Logistic_function_plot.png", width = 8, height = 6, dpi = 600)
+
+
