@@ -1,4 +1,6 @@
-1) (10 points) Annotate the README.md file in your logistic growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which *.csv file you used).
+# Reproducible Research Assignment Questions
+
+### 1) (10 points) Annotate the README.md file in your logistic growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which *.csv file you used).
 
 This analysis aimed to study the dynamics of population growth of E.coli bacteria based on experimental data recording bacterial cell count over time in a test tube with the starting conditions of 100µl of an isolate of the bacterium and 900µl growth medium. 
 
