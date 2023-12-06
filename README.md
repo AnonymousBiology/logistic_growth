@@ -9,7 +9,7 @@ This analysis aimed to study the dynamics of population growth of E.coli bacteri
 **plot_data.R file:** Before constructing a model to fit to my data, I observed the trend in population growth seen in the raw data by plotting population size (Number of cells) on the y-axis against time (minutes) on the x-axis. 
 I did with both untransformed and log-transformed population size data. 
 
-_Using ggplot2 package to constuct a plot of population size (N) against time_
+_Using ggplot2 package to construct a plot of population size (N) against time_
 
 ```
 ggplot(aes(t,N), data = growth_data) +
@@ -26,7 +26,7 @@ _Plot showing population size (N) against time_
 
 ![Population_size_time_untransformed](https://github.com/poppyjdw/logistic_growth/assets/150140489/daba0304-7484-4d61-a587-4a5f4b0514be)
 
-_Using ggplot2 package to constuct a plot of log-transformed population size (N) against time_
+_Using ggplot2 package to construct a plot of log-transformed population size (N) against time_
 
 ```
 ggplot(aes(t,N), data = growth_data) +
@@ -47,9 +47,9 @@ _Plot showing log-transformed population size (N) against time_
 
 The untransformed plot reveals that the population size followed a logistic growth rate, with an initial phase of exponential growth followed by a plateau in the rate of change of growth as the population approaches carrying capacity. The semilog plot shows this logistic growth as two distinct linear phases: initially log(N) increases linearly with time, and then log(N) remains constant over time after carrying capacity is reached. 
 
-**fit_linear_model.R file:** These two distinct phases of growth were used to construct two linear models that fit to the exponential and plateued growth rates separately. In this way, growth rate ($r$) could be approximated from the first model, as the change in population size approximately fits the equation $`N(t) = N_0e^{rt}`$ and carrying capacity ($K$) could be approximated from the second model, as the change in population size approximately fits the equation $\lim_{t \to \infty} N(t) = K$
+**fit_linear_model.R file:** These two distinct phases of growth were used to construct two linear models that fit to the exponential and plateaued growth rates separately. In this way, growth rate ($r$) could be approximated from the first model, as the change in population size approximately fits the equation $`N(t) = N_0e^{rt}`$ and carrying capacity ($K$) could be approximated from the second model, as the change in population size approximately fits the equation $\lim_{t \to \infty} N(t) = K$
 
-I used visual inspection of the semilog plot to subset the data that would be used for each model: I subsetted the values of N up to 1500 minutes for the first model and the vales of N beyond 2500 minutes for the second model as these subsets seemed to capture the 2 distinct linear trends. 
+I used visual inspection of the semilog plot to subset the data that would be used for each model: I subset the values of N up to 1500 minutes for the first model and the vales of N beyond 2500 minutes for the second model as these subsets seemed to capture the 2 distinct linear trends. 
 
 _Creating a linear model to describe the exponential phase of growth_
 
@@ -150,7 +150,7 @@ _Plot showing model in red and log-transformed population size in black_
 
 ![Logistic_function_plot-2](https://github.com/poppyjdw/logistic_growth/assets/150140489/8fd07039-c6eb-4b13-8779-de4c1cdbcda4)
 
-This plot shows that the model appears to fit quite closely to the actual data, suggesting that my estimated parameters are reasonably accurate. This can be further tested by comparing my estimated $N_0$ value, 986.5075, to the actual number of cells at t = 0, 879. My estimate is a bit off, but some disrepency is expected given that the model represents the line of best fit through all the data point, which might not all follow this trend perfectly. Nevertheless, having an $N_0$ in a similar range shows that the parameters are reasonably representative of the data. 
+This plot shows that the model appears to fit quite closely to the actual data, suggesting that my estimated parameters are reasonably accurate. This can be further tested by comparing my estimated $N_0$ value, 986.5075, to the actual number of cells at t = 0, 879. My estimate is a bit off, but some discrepancy is expected given that the model represents the line of best fit through all the data point, which might not all follow this trend perfectly. Nevertheless, having an $N_0$ in a similar range shows that the parameters are reasonably representative of the data. 
 
 ## Question 2
 
@@ -182,7 +182,7 @@ _Estimated value of N_
 ```
 6.00e+10
 ```
-The exponential model therefore predicts a significantly higher population size at t = 4980 than the logostic model (4.370846e+24 is much larger than 6.00e+10), as the growth is never limited by resources to remain at a fixed carrying capacity. If there were a greater abundance of resources to support a higher carrying capacity, there would be less discrepency between the logistic and exponential models.  
+The exponential model therefore predicts a significantly higher population size at t = 4980 than the logistic model (4.370846e+24 is much larger than 6.00e+10), as the growth is never limited by resources to remain at a fixed carrying capacity. If there were a greater abundance of resources to support a higher carrying capacity, there would be less discrepancy between the logistic and exponential models.  
 
 ## Question 3
 
